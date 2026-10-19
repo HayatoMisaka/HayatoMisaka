@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Hayato Misaka</title>
+<meta name="description" content="美坂勇門（Hayato Misaka）— 小さなお店と個人のためのWebデザイナー。デザインから公開まで一人で制作します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+/* Layout: editorial index — a mono "spec sheet" running down a single column, works as numbered plates */
+:root{
+  --paper:#f2f2f0; --ink:#111111; --sub:#5b5b58; --rule:#cfcfcb; --plate:#e6e6e3; --accent:#111111;
+  --mono:"JetBrains Mono","SFMono-Regular",Menlo,Consolas,monospace;
+  --body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#0f0f0f;--ink:#ececea;--sub:#9a9a96;--rule:#2b2b2a;--plate:#1a1a19;--accent:#ececea;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#0f0f0f;--ink:#ececea;--sub:#9a9a96;--rule:#2b2b2a;--plate:#1a1a19;--accent:#ececea;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.85;margin:0}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--rule)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:14px;font-family:var(--mono);font-size:12px;letter-spacing:.08em}
+.bar nav{display:flex;gap:20px;flex-wrap:wrap}
+.bar a{text-decoration:none}
+.bar a:hover,.bar a:focus-visible{text-decoration:underline;outline:none}
+.hero{padding-block:72px 56px;display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:end;border-bottom:1px solid var(--rule)}
+.hero h1{font-family:var(--mono);font-weight:300;font-size:clamp(44px,8vw,96px);line-height:.98;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.hero .role{font-family:var(--mono);font-size:13px;letter-spacing:.14em;color:var(--sub);margin:18px 0 0}
+.hero p.lead{margin:0;font-size:16px;max-width:30em}
+.hero p.lead b{font-weight:700}
+section{padding-block:64px;border-bottom:1px solid var(--rule)}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--sub);margin:0 0 28px;display:flex;gap:12px;align-items:baseline}
+.label span{color:var(--ink)}
+.works{display:flex;flex-direction:column;gap:72px}
+.work{display:grid;grid-template-columns:1.5fr 1fr;gap:36px;align-items:start}
+.work:nth-child(even) .shot{order:2}
+.shot{background:var(--plate);border:1px solid var(--rule);margin:0}
+.shot img{display:block;width:100%;height:auto}
+.shot.empty{aspect-ratio:892/600;display:grid;place-items:center;font-family:var(--mono);font-size:12px;color:var(--sub);letter-spacing:.1em}
+.meta{min-width:0}
+.meta .no{font-family:var(--mono);font-size:12px;color:var(--sub);letter-spacing:.1em}
+.meta h3{font-size:22px;font-weight:700;margin:6px 0 4px;line-height:1.4;text-wrap:balance}
+.meta .kind{font-size:13px;color:var(--sub);margin:0 0 16px}
+.meta p{margin:0 0 16px}
+dl.spec{display:grid;grid-template-columns:5.5em 1fr;gap:6px 14px;margin:0 0 18px;font-size:13px}
+dl.spec dt{font-family:var(--mono);color:var(--sub);font-size:11px;letter-spacing:.1em;padding-top:3px}
+dl.spec dd{margin:0}
+.status{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;border:1px solid var(--ink);padding:2px 8px;margin-bottom:12px}
+.link{font-family:var(--mono);font-size:13px;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:2px}
+.link:hover,.link:focus-visible{opacity:.6;outline:none}
+.svc{width:100%;border-collapse:collapse;font-size:14px}
+.svc th,.svc td{text-align:left;padding:16px 12px 16px 0;border-top:1px solid var(--rule);vertical-align:top}
+.svc th{font-weight:700;width:34%}
+.svc td.price{font-family:var(--mono);white-space:nowrap;text-align:right;font-variant-numeric:tabular-nums;padding-right:0}
+.note{font-size:12px;color:var(--sub);margin:14px 0 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+ol.flow{list-style:none;margin:0;padding:0;counter-reset:f;display:flex;flex-direction:column;gap:14px}
+ol.flow li{counter-increment:f;display:grid;grid-template-columns:3em 1fr;gap:8px}
+ol.flow li::before{content:counter(f,decimal-leading-zero);font-family:var(--mono);color:var(--sub);font-size:13px;padding-top:2px}
+ol.flow b{display:block}
+ul.tools{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+ul.tools li{font-family:var(--mono);font-size:12px;border:1px solid var(--rule);padding:4px 10px}
+.contact p{margin:0 0 10px;max-width:36em}
+footer{padding-block:28px 48px;font-family:var(--mono);font-size:11px;color:var(--sub);letter-spacing:.08em}
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;padding-block:48px 40px;gap:24px}
+  .work{grid-template-columns:1fr;gap:20px}
+  .work:nth-child(even) .shot{order:0}
+  .grid2{grid-template-columns:1fr;gap:40px}
+  .bar nav{gap:14px}
+  .svc th{width:auto}
+}
+@media (max-width:420px){.bar nav a.opt{display:none}}
+@media (prefers-reduced-motion:no-preference){.shot img{transition:filter .3s}.shot:hover img{filter:contrast(1.05)}}
+</style>
+
+</head>
+<body>
+<header class="top"><div class="wrap bar">
+  <a href="#top">HAYATO MISAKA</a>
+  <nav aria-label="ページ内リンク"><a href="#works">WORKS</a><a href="#service" class="opt">SERVICE</a><a href="#about" class="opt">ABOUT</a><a href="#contact">CONTACT</a></nav>
+</div></header>
+
+<main id="top">
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <h1>Hayato<br>Misaka</h1>
+      <p class="role">WEB DESIGNER — TOKYO</p>
+    </div>
+    <p class="lead">美坂勇門（みさか はやと）です。<br>小さなお店や個人の方のWebサイトを、<b>デザインから公開まで一人で</b>制作しています。アパレルブランドでのSNS運用・広告の経験をもとに、「見た人が実際に動くページ」をつくります。</p>
+  </div>
+
+  <section id="works" aria-labelledby="works-h">
+    <h2 class="label" id="works-h"><span>WORKS</span> 制作実績</h2>
+    <div class="works">
+
+      <article class="work">
+        <figure class="shot"><img src="images/shotamiyashita.jpg" alt="美容師 宮下翔太さんの個人サイトのトップ画面。黒地に白い等幅フォントで名前、右にモノクロのポートレート写真"></figure>
+        <div class="meta">
+          <div class="no">01</div>
+          <h3>Shota Miyashita</h3>
+          <p class="kind">美容師の個人サイト</p>
+          <p>サロンではなく美容師個人の世界観を伝えるサイト。モノクロ写真と等幅フォントで、コンクリート建築のような静かな緊張感を出しました。</p>
+          <dl class="spec">
+            <dt>担当</dt><dd>企画・デザイン・実装・公開</dd>
+            <dt>機能</dt><dd>作品ギャラリー、料金表、予約導線、日英切り替え、レスポンシブ</dd>
+          </dl>
+          <a class="link" href="https://hayatomisaka.github.io/shotamiyashita-/" target="_blank" rel="noopener">サイトを見る ↗</a>
+        </div>
+      </article>
+
+      <article class="work">
+        <figure class="shot"><img src="images/johnsicecream.jpg" alt="JOHNS ICE CREAMのサイトのトップ画面。黒地に白い丸みのあるロゴと『あなたのアイスクリームを作ってみよう！』の見出し"></figure>
+        <div class="meta">
+          <div class="no">02</div>
+          <span class="status">店舗へ提案中のデザイン</span>
+          <h3>JOHNS ICE CREAM</h3>
+          <p class="kind">アイスクリーム店のサイト（中目黒・SHIBUYA109）</p>
+          <p>注文前に、フレーバーの色の組み合わせや重ねる順番、トッピングを画面上で試せる「つくる」機能が中心のサイト。決まった組み合わせはオーダーカードとして店頭で見せられます。</p>
+          <dl class="spec">
+            <dt>担当</dt><dd>企画・デザイン・実装</dd>
+            <dt>機能</dt><dd>アイスのカスタマイズ、2店舗のメニュー切り替え、日英切り替え</dd>
+          </dl>
+          <a class="link" href="https://hayatomisaka.github.io/JoensIceCream-/" target="_blank" rel="noopener">デザインを見る ↗</a>
+        </div>
+      </article>
+
+      <article class="work">
+        <figure class="shot"><img src="images/haveagoodtime.jpg" alt="アパレルブランド have a good time の公式サイトのトップ画面。多数のロゴグラフィックが並ぶ"></figure>
+        <div class="meta">
+          <div class="no">03</div>
+          <h3>have a good time</h3>
+          <p class="kind">ストリートアパレルブランド</p>
+          <p>Webサイトの一部制作に加え、Instagramの運用と広告を担当。広告から流れてくるお客様の目線で、ページと投稿を作っています。</p>
+          <dl class="spec">
+            <dt>担当</dt><dd>Webサイト（一部）、Instagram運用、広告</dd>
+            <dt>成果</dt><dd>Instagramフォロワー 約5万人 → 約9万人</dd>
+          </dl>
+          <a class="link" href="https://have-a-goodtime.com/en" target="_blank" rel="noopener">サイトを見る ↗</a>
+        </div>
+      </article>
+
+      <article class="work">
+        <div class="shot empty" role="img" aria-label="画像は公開後に掲載予定">COMING SOON</div>
+        <div class="meta">
+          <div class="no">04</div>
+          <span class="status">公開準備中</span>
+          <h3>ヘアサロンのサイト（代官山）</h3>
+          <p class="kind">創業21年のヘアサロン</p>
+          <p>モノクロのファッション誌のような世界観で制作。スタイリストの写真を押すと、その人の料金と空き状況が見られる設計です。</p>
+          <dl class="spec">
+            <dt>担当</dt><dd>企画・デザイン・実装</dd>
+            <dt>機能</dt><dd>スタイリスト別の料金表示、予約導線、ワンタップ電話</dd>
+          </dl>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="service" aria-labelledby="svc-h">
+    <h2 class="label" id="svc-h"><span>SERVICE</span> できること・料金の目安</h2>
+    <div style="overflow-x:auto">
+    <table class="svc">
+      <tr><th>LPデザイン</th><td>構成・原稿の支給をもとにデザイン（PC・スマホ）</td><td class="price">¥25,000〜</td></tr>
+      <tr><th>LP制作（デザイン＋実装）</th><td>デザインからコーディング・公開まで</td><td class="price">¥50,000〜</td></tr>
+      <tr><th>ホームページ制作</th><td>5ページ前後。企画・デザイン・実装・公開</td><td class="price">¥80,000〜</td></tr>
+      <tr><th>バナー・SNS画像</th><td>広告バナー、Instagram投稿画像など</td><td class="price">¥2,000〜／枚</td></tr>
+    </table>
+    </div>
+    <p class="note">税抜。内容やボリュームに応じてご相談のうえ決めます。継続のご依頼は割安になります。</p>
+  </section>
+
+  <section id="about" aria-labelledby="about-h">
+    <h2 class="label" id="about-h"><span>ABOUT</span> 進め方と道具</h2>
+    <div class="grid2">
+      <div>
+        <ol class="flow">
+          <li><div><b>ヒアリング</b>お店の雰囲気、お客様、目的をメッセージで伺います。</div></li>
+          <li><div><b>デザイン案</b>トップページから作り、方向性を確認していただきます。</div></li>
+          <li><div><b>制作・修正</b>残りのページを作り、確認と修正を重ねます。</div></li>
+          <li><div><b>公開</b>表示とフォームを確認して公開。公開後の小さな修正にも対応します。</div></li>
+        </ol>
+      </div>
+      <div>
+        <p style="margin:0 0 14px">使えるツール</p>
+        <ul class="tools"><li>Figma</li><li>Photoshop</li><li>Illustrator</li><li>STUDIO</li><li>HTML / CSS / JavaScript</li><li>AI（制作の効率化）</li></ul>
+        <p style="margin:28px 0 6px">稼働</p>
+        <p style="margin:0;color:var(--sub)">週15時間程度（平日夜・土日）。メッセージは基本的に当日中にお返事します。日本語・英語に対応。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact" aria-labelledby="contact-h">
+    <h2 class="label" id="contact-h"><span>CONTACT</span> ご依頼・ご相談</h2>
+    <p>クラウドワークスでお仕事をお受けしています。ご相談はクラウドワークスのメッセージからお送りください。</p>
+  </section>
+</div>
+</main>
+<footer><div class="wrap">© 2026 Hayato Misaka</div></footer>
+</body>
+</html>
