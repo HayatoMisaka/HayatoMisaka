@@ -39,6 +39,10 @@ section{padding-block:64px;border-bottom:1px solid var(--rule)}
 .work:nth-child(even) .shot{order:2}
 .shot{background:var(--plate);border:1px solid var(--rule);margin:0}
 .shot img{display:block;width:100%;height:auto}
+.shot a{display:block}
+.shot.phone{display:flex;justify-content:center;padding:36px 0}
+.shot.phone a{width:min(58%,270px)}
+.shot.phone img{border:1px solid var(--rule);border-radius:14px}
 .shot.empty{aspect-ratio:892/600;display:grid;place-items:center;font-family:var(--mono);font-size:12px;color:var(--sub);letter-spacing:.1em}
 .meta{min-width:0}
 .meta .no{font-family:var(--mono);font-size:12px;color:var(--sub);letter-spacing:.1em}
@@ -99,7 +103,7 @@ footer{padding-block:28px 48px;font-family:var(--mono);font-size:11px;color:var(
     <div class="works">
 
       <article class="work">
-        <figure class="shot"><img src="images/shotamiyashita.jpg" alt="美容師 宮下翔太さんの個人サイトのトップ画面。黒地に白い等幅フォントで名前、右にモノクロのポートレート写真"></figure>
+        <figure class="shot phone"><a href="https://hayatomisaka.github.io/shotamiyashita-/" target="_blank" rel="noopener"><img src="images/shotamiyashita-sp.jpg" alt="美容師 宮下翔太さんの個人サイトのスマホ表示。モノクロのポートレート写真に白い等幅フォントで名前" width="780" height="1688"></a></figure>
         <div class="meta">
           <div class="no">01</div>
           <h3>Shota Miyashita</h3>
@@ -114,7 +118,7 @@ footer{padding-block:28px 48px;font-family:var(--mono);font-size:11px;color:var(
       </article>
 
       <article class="work">
-        <figure class="shot"><img src="images/johnsicecream.jpg" alt="JOHNS ICE CREAMのサイトのトップ画面。黒地に白い丸みのあるロゴと『あなたのアイスクリームを作ってみよう！』の見出し"></figure>
+        <figure class="shot"><a href="https://hayatomisaka.github.io/JoensIceCream-/" target="_blank" rel="noopener"><img src="images/johnsicecream.jpg" alt="JOHNS ICE CREAMのサイトのトップ画面。黒地に白い丸みのあるロゴと『あなたのアイスクリームを作ってみよう！』の見出し"></a></figure>
         <div class="meta">
           <div class="no">02</div>
           <span class="status">店舗へ提案中のデザイン</span>
@@ -130,7 +134,7 @@ footer{padding-block:28px 48px;font-family:var(--mono);font-size:11px;color:var(
       </article>
 
       <article class="work">
-        <figure class="shot"><img src="images/haveagoodtime.jpg" alt="アパレルブランド have a good time の公式サイトのトップ画面。多数のロゴグラフィックが並ぶ"></figure>
+        <figure class="shot"><a href="https://have-a-goodtime.com/en" target="_blank" rel="noopener"><img src="images/haveagoodtime.jpg" alt="アパレルブランド have a good time の公式サイトのトップ画面。多数のロゴグラフィックが並ぶ"></a></figure>
         <div class="meta">
           <div class="no">03</div>
           <h3>have a good time</h3>
@@ -145,17 +149,17 @@ footer{padding-block:28px 48px;font-family:var(--mono);font-size:11px;color:var(
       </article>
 
       <article class="work">
-        <div class="shot empty" role="img" aria-label="画像は公開後に掲載予定">COMING SOON</div>
+        <figure class="shot phone"><a href="https://hayatomisaka.github.io/brosstokyo-/" target="_blank" rel="noopener"><img src="images/brosstokyo-sp.jpg" alt="ヘアサロン BROSS TOKYO のサイトのスマホ表示。モノクロのポートレート写真とセリフ体のロゴ、創業21年の表示" width="780" height="1688"></a></figure>
         <div class="meta">
           <div class="no">04</div>
-          <span class="status">公開準備中</span>
-          <h3>ヘアサロンのサイト（代官山）</h3>
-          <p class="kind">創業21年のヘアサロン</p>
+          <h3>BROSS TOKYO</h3>
+          <p class="kind">創業21年のヘアサロン（代官山）</p>
           <p>モノクロのファッション誌のような世界観で制作。スタイリストの写真を押すと、その人の料金と空き状況が見られる設計です。</p>
           <dl class="spec">
             <dt>担当</dt><dd>企画・デザイン・実装</dd>
             <dt>機能</dt><dd>スタイリスト別の料金表示、予約導線、ワンタップ電話</dd>
           </dl>
+          <a class="link" href="https://hayatomisaka.github.io/brosstokyo-/" target="_blank" rel="noopener">サイトを見る ↗</a>
         </div>
       </article>
 
@@ -168,7 +172,7 @@ footer{padding-block:28px 48px;font-family:var(--mono);font-size:11px;color:var(
     <table class="svc">
       <tr><th>LPデザイン</th><td>構成・原稿の支給をもとにデザイン（PC・スマホ）</td><td class="price">¥25,000〜</td></tr>
       <tr><th>LP制作（デザイン＋実装）</th><td>デザインからコーディング・公開まで</td><td class="price">¥50,000〜</td></tr>
-      <tr><th>ホームページ制作</th><td>5ページ前後。企画・デザイン・実装・公開</td><td class="price">¥80,000〜</td></tr>
+      <tr><th>ホームページ制作</th><td>5ページ前後。企画・デザイン・実装・公開</td><td class="price">¥60,000〜</td></tr>
       <tr><th>バナー・SNS画像</th><td>広告バナー、Instagram投稿画像など</td><td class="price">¥2,000〜／枚</td></tr>
     </table>
     </div>
@@ -197,7 +201,8 @@ footer{padding-block:28px 48px;font-family:var(--mono);font-size:11px;color:var(
 
   <section id="contact" class="contact" aria-labelledby="contact-h">
     <h2 class="label" id="contact-h"><span>CONTACT</span> ご依頼・ご相談</h2>
-    <p>クラウドワークスでお仕事をお受けしています。ご相談はクラウドワークスのメッセージからお送りください。</p>
+    <p>ご依頼・ご相談は、メールでご連絡ください。</p>
+    <p><a class="link" href="mailto:misakahayato.work@gmail.com">misakahayato.work@gmail.com</a></p>
   </section>
 </div>
 </main>
