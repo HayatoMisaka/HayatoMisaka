@@ -82,6 +82,24 @@ footer{padding-block:28px 48px;font-family:var(--mono);font-size:11px;color:var(
 }
 @media (max-width:420px){.bar nav a.opt{display:none}}
 @media (prefers-reduced-motion:no-preference){.shot img{transition:filter .3s}.shot:hover img{filter:contrast(1.05)}}
+/* Free sample offer: marquee band + live badge */
+html{overflow-x:clip}
+.ticker{margin-inline:calc(50% - 50vw);background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap;font-family:var(--mono);font-size:13px;letter-spacing:.14em;padding-block:12px}
+.ticker .track{display:inline-flex;animation:ticker 22s linear infinite}
+.ticker span{padding-right:2.4em}
+.ticker b{font-weight:600}
+@keyframes ticker{to{transform:translateX(-50%)}}
+.offer{padding-block:56px}
+.offer .live{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;margin:0 0 18px}
+.offer .live i{width:8px;height:8px;border-radius:50%;background:#e5372b;box-shadow:0 0 0 0 rgba(229,55,43,.55);animation:pulse 1.6s ease-out infinite}
+@keyframes pulse{to{box-shadow:0 0 0 10px rgba(229,55,43,0)}}
+.offer h2{font-size:clamp(24px,5.4vw,36px);line-height:1.45;margin:0 0 16px;text-wrap:balance}
+.offer h2 em{font-style:normal;white-space:nowrap;background:linear-gradient(var(--ink),var(--ink)) 0 100%/0 2px no-repeat;padding-bottom:2px;animation:underline 1.2s .4s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes underline{to{background-size:100% 2px}}
+.offer p{margin:0 0 14px;max-width:34em}
+.offer .cta{display:inline-block;margin-top:10px;font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-decoration:none;background:var(--ink);color:var(--paper);padding:14px 22px}
+.offer .cta:hover,.offer .cta:focus-visible{opacity:.8;outline:none}
+@media (prefers-reduced-motion:reduce){.ticker .track,.offer .live i{animation:none}.offer h2 em{animation:none;background-size:100% 2px}}
 </style>
 
 </head>
@@ -100,6 +118,16 @@ footer{padding-block:28px 48px;font-family:var(--mono);font-size:11px;color:var(
     </div>
     <p class="lead">I’m Hayato Misaka.<br>I build websites for small shops and independent creators, <b>handling everything from design to launch myself</b>. Drawing on my experience running social media and ads for an apparel brand, I make pages that get visitors to take action.</p>
   </div>
+
+  <div class="ticker" aria-hidden="true"><div class="track"><span><b>LIMITED TIME</b> · FREE SAMPLE PAGE · サンプルページ無料制作</span><span><b>LIMITED TIME</b> · FREE SAMPLE PAGE · サンプルページ無料制作</span><span><b>LIMITED TIME</b> · FREE SAMPLE PAGE · サンプルページ無料制作</span><span><b>LIMITED TIME</b> · FREE SAMPLE PAGE · サンプルページ無料制作</span><span><b>LIMITED TIME</b> · FREE SAMPLE PAGE · サンプルページ無料制作</span><span><b>LIMITED TIME</b> · FREE SAMPLE PAGE · サンプルページ無料制作</span><span><b>LIMITED TIME</b> · FREE SAMPLE PAGE · サンプルページ無料制作</span><span><b>LIMITED TIME</b> · FREE SAMPLE PAGE · サンプルページ無料制作</span></div></div>
+
+  <section id="offer" class="offer" aria-label="Free sample page offer">
+    <p class="live"><i></i>NOW OPEN — LIMITED TIME</p>
+    <h2>I’ll build a sample page for you, <em>free of charge</em>.</h2>
+    <p>I’ll design and build one top page for your shop at no cost. If you like what you see, you can go straight on to the full project.</p>
+    <p class="note">This is a limited-time offer and may end without notice.</p>
+    <a class="cta" href="mailto:misakahayato.work@gmail.com?subject=Free%20sample%20page%20request">Apply by email →</a>
+  </section>
 
   <section id="works" aria-labelledby="works-h">
     <h2 class="label" id="works-h"><span>WORKS</span> Selected work</h2>
