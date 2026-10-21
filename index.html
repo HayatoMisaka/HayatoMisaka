@@ -92,6 +92,14 @@ html{overflow-x:clip}
 .offer p{margin:0}
 .offer a{font-family:var(--mono);font-size:13px;white-space:nowrap}
 @media (prefers-reduced-motion:reduce){.ticker .track{animation:none}}
+.sub{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--sub);margin:44px 0 14px}
+#service .label+.sub{margin-top:0}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.plan{border:1px solid var(--rule);padding:22px 20px 6px}
+.plan h3{font-size:18px;font-weight:700;margin:0 0 2px}
+.plan .what{font-size:13px;color:var(--sub);margin:0 0 18px}
+.plan dl.spec{grid-template-columns:7em 1fr}
+@media (max-width:760px){.plans{grid-template-columns:1fr}}
 </style>
 
 </head>
@@ -186,15 +194,37 @@ html{overflow-x:clip}
 
   <section id="service" aria-labelledby="svc-h">
     <h2 class="label" id="svc-h"><span>SERVICE</span> できること・料金の目安</h2>
+    <p class="sub">月額プラン</p>
+    <div class="plans">
+      <div class="plan">
+        <h3>ライト</h3>
+        <p class="what">LP（1ページ）＋英語メニュー</p>
+        <dl class="spec"><dt>初期費用</dt><dd>¥45,000</dd><dt>月額</dt><dd>¥5,000</dd><dt>更新</dt><dd>メニュー更新 月1回まで込み</dd><dt>向いている</dt><dd>Instagramから予約につなげたいお店</dd></dl>
+      </div>
+      <div class="plan">
+        <h3>スタンダード</h3>
+        <p class="what">Webサイト（複数ページ）＋英語メニュー</p>
+        <dl class="spec"><dt>初期費用</dt><dd>¥60,000</dd><dt>月額</dt><dd>¥7,000</dd><dt>更新</dt><dd>メニュー更新 月1回まで込み</dd><dt>向いている</dt><dd>検索で見つけてもらいたい、情報量が多いお店</dd></dl>
+      </div>
+    </div>
+    <p class="sub">単品でも注文できます</p>
     <div style="overflow-x:auto">
     <table class="svc">
       <tr><th>LPデザイン</th><td>構成・原稿の支給をもとにデザイン（PC・スマホ）</td><td class="price">¥25,000〜</td></tr>
       <tr><th>LP制作（デザイン＋実装）</th><td>デザインからコーディング・公開まで</td><td class="price">¥50,000〜</td></tr>
       <tr><th>ホームページ制作</th><td>5ページ前後。企画・デザイン・実装・公開</td><td class="price">¥60,000〜</td></tr>
+      <tr><th>英語メニュー</th><td>英語メニューのみのご依頼</td><td class="price">¥15,000</td></tr>
       <tr><th>バナー・SNS画像</th><td>広告バナー、Instagram投稿画像など</td><td class="price">¥2,000〜／枚</td></tr>
     </table>
     </div>
-    <p class="note">税抜。内容やボリュームに応じてご相談のうえ決めます。継続のご依頼は割安になります。</p>
+    <p class="sub">オプション</p>
+    <div style="overflow-x:auto">
+    <table class="svc">
+      <tr><th colspan="2">メニューのQRコード化</th><td class="price">¥2,000</td></tr>
+      <tr><th colspan="2">メニュー更新（月2回目以降）</th><td class="price">¥3,000／回</td></tr>
+    </table>
+    </div>
+    <p class="note">税抜。LPだけ、Webサイトだけ、英語メニューだけなど、単品のご注文もできます。内容やボリュームに応じてご相談のうえ決めます。継続のご依頼は割安になります。</p>
   </section>
 
   <section id="about" aria-labelledby="about-h">

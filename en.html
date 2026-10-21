@@ -92,6 +92,14 @@ html{overflow-x:clip}
 .offer p{margin:0}
 .offer a{font-family:var(--mono);font-size:13px;white-space:nowrap}
 @media (prefers-reduced-motion:reduce){.ticker .track{animation:none}}
+.sub{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--sub);margin:44px 0 14px}
+#service .label+.sub{margin-top:0}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.plan{border:1px solid var(--rule);padding:22px 20px 6px}
+.plan h3{font-size:18px;font-weight:700;margin:0 0 2px}
+.plan .what{font-size:13px;color:var(--sub);margin:0 0 18px}
+.plan dl.spec{grid-template-columns:7em 1fr}
+@media (max-width:760px){.plans{grid-template-columns:1fr}}
 </style>
 
 </head>
@@ -186,15 +194,37 @@ html{overflow-x:clip}
 
   <section id="service" aria-labelledby="svc-h">
     <h2 class="label" id="svc-h"><span>SERVICE</span> Services &amp; pricing</h2>
+    <p class="sub">Monthly plans</p>
+    <div class="plans">
+      <div class="plan">
+        <h3>Light</h3>
+        <p class="what">Landing page (1 page) + English menu</p>
+        <dl class="spec"><dt>Initial fee</dt><dd>¥45,000</dd><dt>Monthly</dt><dd>¥5,000</dd><dt>Updates</dt><dd>Up to 1 menu update per month included</dd><dt>Best for</dt><dd>Shops that want bookings from Instagram</dd></dl>
+      </div>
+      <div class="plan">
+        <h3>Standard</h3>
+        <p class="what">Website (multiple pages) + English menu</p>
+        <dl class="spec"><dt>Initial fee</dt><dd>¥60,000</dd><dt>Monthly</dt><dd>¥7,000</dd><dt>Updates</dt><dd>Up to 1 menu update per month included</dd><dt>Best for</dt><dd>Shops that want to be found via search, or have a lot of information</dd></dl>
+      </div>
+    </div>
+    <p class="sub">Or order individually</p>
     <div style="overflow-x:auto">
     <table class="svc">
       <tr><th>Landing page design</th><td>Design based on your structure and copy (desktop &amp; mobile)</td><td class="price">¥25,000〜</td></tr>
       <tr><th>Landing page (design + build)</th><td>From design through coding and launch</td><td class="price">¥50,000〜</td></tr>
       <tr><th>Website</th><td>Around 5 pages. Planning, design, development, launch</td><td class="price">¥60,000〜</td></tr>
+      <tr><th>English menu</th><td>English menu only</td><td class="price">¥15,000</td></tr>
       <tr><th>Banners &amp; social images</th><td>Ad banners, Instagram post images, etc.</td><td class="price">¥2,000〜 / image</td></tr>
     </table>
     </div>
-    <p class="note">Prices exclude tax and are set together based on scope. Ongoing work is discounted.</p>
+    <p class="sub">Options</p>
+    <div style="overflow-x:auto">
+    <table class="svc">
+      <tr><th colspan="2">Menu as a QR code</th><td class="price">¥2,000</td></tr>
+      <tr><th colspan="2">Menu update (2nd and later each month)</th><td class="price">¥3,000 / update</td></tr>
+    </table>
+    </div>
+    <p class="note">Prices exclude tax. You can also order individually: just a landing page, just a website, or just an English menu. Prices are set together based on scope. Ongoing work is discounted.</p>
   </section>
 
   <section id="about" aria-labelledby="about-h">
