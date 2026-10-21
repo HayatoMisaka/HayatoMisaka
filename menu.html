@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Menu｜Hayato Misaka</title>
+<meta name="description" content="美坂勇門（Hayato Misaka）のメニューデザイン実績。日英併記のメニューを、お店の雰囲気に合わせて制作します。">
+<link rel="alternate" hreflang="en" href="en-menu.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+/* Layout: editorial index — a mono "spec sheet" running down a single column, works as numbered plates */
+:root{
+  --paper:#f2f2f0; --ink:#111111; --sub:#5b5b58; --rule:#cfcfcb; --plate:#e6e6e3; --accent:#111111;
+  --mono:"JetBrains Mono","SFMono-Regular",Menlo,Consolas,monospace;
+  --body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#0f0f0f;--ink:#ececea;--sub:#9a9a96;--rule:#2b2b2a;--plate:#1a1a19;--accent:#ececea;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#0f0f0f;--ink:#ececea;--sub:#9a9a96;--rule:#2b2b2a;--plate:#1a1a19;--accent:#ececea;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.85;margin:0}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--rule)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:14px;font-family:var(--mono);font-size:12px;letter-spacing:.08em}
+.bar nav{display:flex;gap:20px;flex-wrap:wrap}
+.bar a{text-decoration:none}
+.lang{display:flex;gap:6px;color:var(--sub)}
+.lang [aria-current]{color:var(--ink)}
+.bar a:hover,.bar a:focus-visible{text-decoration:underline;outline:none}
+.hero{padding-block:72px 56px;display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:end;border-bottom:1px solid var(--rule)}
+.hero h1{font-family:var(--mono);font-weight:300;font-size:clamp(44px,8vw,96px);line-height:.98;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.hero .role{font-family:var(--mono);font-size:13px;letter-spacing:.14em;color:var(--sub);margin:18px 0 0}
+.hero p.lead{margin:0;font-size:16px;max-width:30em}
+.hero p.lead b{font-weight:700}
+section{padding-block:64px;border-bottom:1px solid var(--rule)}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--sub);margin:0 0 28px;display:flex;gap:12px;align-items:baseline}
+.label span{color:var(--ink)}
+.works{display:flex;flex-direction:column;gap:72px}
+.work{display:grid;grid-template-columns:1.5fr 1fr;gap:36px;align-items:start}
+.work:nth-child(even) .shot{order:2}
+.shot{background:var(--plate);border:1px solid var(--rule);margin:0}
+.shot img{display:block;width:100%;height:auto}
+.shot a{display:block}
+.shot.phone{background:none;border:0;display:flex;justify-content:center}
+.shot.phone a{width:min(48%,220px)}
+.shot.phone img{border-radius:18px}
+.shot.empty{aspect-ratio:892/600;display:grid;place-items:center;font-family:var(--mono);font-size:12px;color:var(--sub);letter-spacing:.1em}
+.meta{min-width:0}
+.meta .no{font-family:var(--mono);font-size:12px;color:var(--sub);letter-spacing:.1em}
+.meta h3{font-size:22px;font-weight:700;margin:6px 0 4px;line-height:1.4;text-wrap:balance}
+.meta .kind{font-size:13px;color:var(--sub);margin:0 0 16px}
+.meta p{margin:0 0 16px}
+dl.spec{display:grid;grid-template-columns:5.5em 1fr;gap:6px 14px;margin:0 0 18px;font-size:13px}
+dl.spec dt{font-family:var(--mono);color:var(--sub);font-size:11px;letter-spacing:.1em;padding-top:3px}
+dl.spec dd{margin:0}
+.status{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;border:1px solid var(--ink);padding:2px 8px;margin-bottom:12px}
+.link{font-family:var(--mono);font-size:13px;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:2px}
+.link:hover,.link:focus-visible{opacity:.6;outline:none}
+.svc{width:100%;border-collapse:collapse;font-size:14px}
+.svc th,.svc td{text-align:left;padding:16px 12px 16px 0;border-top:1px solid var(--rule);vertical-align:top}
+.svc th{font-weight:700;width:34%}
+.svc td.price{font-family:var(--mono);white-space:nowrap;text-align:right;font-variant-numeric:tabular-nums;padding-right:0}
+.note{font-size:12px;color:var(--sub);margin:14px 0 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+ol.flow{list-style:none;margin:0;padding:0;counter-reset:f;display:flex;flex-direction:column;gap:14px}
+ol.flow li{counter-increment:f;display:grid;grid-template-columns:3em 1fr;gap:8px}
+ol.flow li::before{content:counter(f,decimal-leading-zero);font-family:var(--mono);color:var(--sub);font-size:13px;padding-top:2px}
+ol.flow b{display:block}
+ul.tools{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+ul.tools li{font-family:var(--mono);font-size:12px;border:1px solid var(--rule);padding:4px 10px}
+.contact p{margin:0 0 10px;max-width:36em}
+footer{padding-block:28px 48px;font-family:var(--mono);font-size:11px;color:var(--sub);letter-spacing:.08em}
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;padding-block:48px 40px;gap:24px}
+  .work{grid-template-columns:1fr;gap:20px}
+  .work:nth-child(even) .shot{order:0}
+  .grid2{grid-template-columns:1fr;gap:40px}
+  .bar nav{gap:14px}
+  .svc th{width:auto}
+}
+@media (max-width:420px){.bar nav a.opt{display:none}}
+@media (prefers-reduced-motion:no-preference){.shot img{transition:filter .3s}.shot:hover img{filter:contrast(1.05)}}
+/* Free sample notice: quiet gray band at the very top (scrolls away) + one-line note */
+html{overflow-x:clip}
+.ticker{background:var(--plate);color:var(--sub);border-bottom:1px solid var(--rule);overflow:hidden;white-space:nowrap;font-family:var(--mono);font-size:12px;letter-spacing:.12em;padding-block:9px}
+.ticker .track{display:inline-flex;animation:ticker 40s linear infinite}
+.ticker span{padding-right:2.4em}
+@keyframes ticker{to{transform:translateX(-50%)}}
+.offer{padding-block:28px;font-size:14px}
+.offer p{margin:0}
+.offer a{font-family:var(--mono);font-size:13px;white-space:nowrap}
+@media (prefers-reduced-motion:reduce){.ticker .track{animation:none}}
+.sub{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--sub);margin:44px 0 14px}
+#service .label+.sub{margin-top:0}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.plan{border:1px solid var(--rule);padding:22px 20px 6px}
+.plan h3{font-size:18px;font-weight:700;margin:0 0 2px}
+.plan .what{font-size:13px;color:var(--sub);margin:0 0 18px}
+.plan dl.spec{grid-template-columns:7em 1fr}
+@media (max-width:760px){.plans{grid-template-columns:1fr}}
+/* Works tabs + menu pages */
+.tabs{display:flex;margin:0 0 40px;border-bottom:1px solid var(--rule)}
+.tabs a{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-decoration:none;color:var(--sub);padding:12px 20px;border:1px solid transparent;border-bottom:0;margin-bottom:-1px}
+.tabs a span{margin-left:8px;font-family:var(--body);letter-spacing:.04em}
+.tabs a:hover,.tabs a:focus-visible{color:var(--ink);outline:none}
+.tabs a[aria-current]{color:var(--ink);border-color:var(--rule);background:var(--paper)}
+.menus{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:64px 36px}
+.menu .shot a{display:block}
+.menu .meta{margin-top:20px}
+.menu.wide{grid-column:1/-1;display:grid;grid-template-columns:2fr 1fr;gap:36px;align-items:start}
+.menu.wide .meta{margin-top:0}
+.intro{margin:0 0 44px;max-width:36em}
+@media (max-width:760px){.menus{grid-template-columns:1fr;gap:56px}.menu.wide{grid-template-columns:1fr;gap:20px}.menu.wide .meta{margin-top:20px}.tabs a{padding:12px 16px}}
+</style>
+
+</head>
+<body>
+<header class="top"><div class="wrap bar">
+  <a href="index.html">HAYATO MISAKA</a>
+  <nav aria-label="ページ内リンク"><a href="index.html#works">WORKS</a><a href="index.html#service" class="opt">SERVICE</a><a href="index.html#about" class="opt">ABOUT</a><a href="#contact">CONTACT</a><span class="lang"><a href="menu.html" lang="ja" hreflang="ja" aria-current="page">JP</a>/<a href="en-menu.html" lang="en" hreflang="en">EN</a></span></nav>
+</div></header>
+
+<main id="top">
+<div class="wrap">
+  <section id="works" aria-labelledby="works-h" style="padding-top:48px">
+    <h2 class="label" id="works-h"><span>WORKS</span> 制作実績</h2>
+    <nav class="tabs" aria-label="制作実績の種類"><a href="index.html">WEB<span>サイト</span></a><a href="menu.html" aria-current="page">MENU<span>メニュー</span></a></nav>
+    <p class="intro">お店の雰囲気に合わせてデザインした、日英併記メニューのサンプルです。4点とも、お店を想定して制作しました。</p>
+    <div class="menus">
+      <article class="menu wide">
+        <figure class="shot"><a href="images/menu-bistro.jpg" target="_blank" rel="noopener"><img src="images/menu-bistro.jpg" alt="Orme の洋食ビストロ向けメニュー（黒板風・見開き）" width="2382" height="1685"></a></figure>
+        <div class="meta">
+          <div class="no">01</div>
+          <h3>Orme｜洋食ビストロ</h3>
+          <p class="kind">見開きのお品書き（黒板風）</p>
+          <p>黒板をイメージした2ページ構成。左は料理写真、右はお品書き。チョーク風の文字で、ビストロらしい温度感に。</p>
+          <dl class="spec">
+            <dt>形式</dt><dd>見開き（A4 × 2面）・日英併記</dd>
+            <dt>特徴</dt><dd>チョーク風の文字、料理写真の切り抜き、日替わりの黒板コーナー</dd>
+          </dl>
+          <a class="link" href="images/menu-bistro.jpg" target="_blank" rel="noopener">拡大して見る ↗</a>
+        </div>
+      </article>
+
+      <article class="menu">
+        <figure class="shot"><a href="images/menu-cafe.jpg" target="_blank" rel="noopener"><img src="images/menu-cafe.jpg" alt="akari のカフェ向けメニュー（手描きイラスト）" width="1191" height="1685" loading="lazy"></a></figure>
+        <div class="meta">
+          <div class="no">02</div>
+          <h3>akari｜カフェ</h3>
+          <p class="kind">自家焙煎珈琲と焼き菓子の店</p>
+          <p>手描きの文字とイラストで、あたたかく親しみやすい雰囲気に。ドリンク・焼き菓子・ランチ・今週の豆を1枚にまとめました。</p>
+          <dl class="spec">
+            <dt>形式</dt><dd>A4・1枚・日英併記</dd>
+            <dt>特徴</dt><dd>手描き風の文字とイラスト、今週の豆のコーナー</dd>
+          </dl>
+          <a class="link" href="images/menu-cafe.jpg" target="_blank" rel="noopener">拡大して見る ↗</a>
+        </div>
+      </article>
+
+      <article class="menu">
+        <figure class="shot"><a href="images/menu-kappo.jpg" target="_blank" rel="noopener"><img src="images/menu-kappo.jpg" alt="しずく の割烹向けお品書き（和紙風・縦書きの店名）" width="1191" height="1685" loading="lazy"></a></figure>
+        <div class="meta">
+          <div class="no">03</div>
+          <h3>しずく｜割烹</h3>
+          <p class="kind">和食の一品料理店</p>
+          <p>和紙のような質感に、やさしい筆致の料理イラストと縦書きの店名。英語の説明を添えて、海外のお客様にも伝わるお品書きに。</p>
+          <dl class="spec">
+            <dt>形式</dt><dd>A4・1枚・日英併記</dd>
+            <dt>特徴</dt><dd>手描き風の料理イラスト、縦書きの店名、落款風の印</dd>
+          </dl>
+          <a class="link" href="images/menu-kappo.jpg" target="_blank" rel="noopener">拡大して見る ↗</a>
+        </div>
+      </article>
+
+      <article class="menu">
+        <figure class="shot"><a href="images/menu-bar.jpg" target="_blank" rel="noopener"><img src="images/menu-bar.jpg" alt="TSUKI のバー向けメニュー（黒地に金の文字）" width="1191" height="1685" loading="lazy"></a></figure>
+        <div class="meta">
+          <div class="no">04</div>
+          <h3>TSUKI｜バー</h3>
+          <p class="kind">夜に開くバー</p>
+          <p>黒地に金色の文字で、夜の落ち着いた空気を。月の満ち欠けにちなんだ4杯をイラストで見せ、そのほかは一覧にしました。</p>
+          <dl class="spec">
+            <dt>形式</dt><dd>A4・1枚・日英併記</dd>
+            <dt>特徴</dt><dd>月の満ち欠けのアイコン、カクテルのイラスト、金の差し色</dd>
+          </dl>
+          <a class="link" href="images/menu-bar.jpg" target="_blank" rel="noopener">拡大して見る ↗</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="price" aria-labelledby="price-h">
+    <h2 class="label" id="price-h"><span>料金</span> メニュー制作の料金</h2>
+    <div style="overflow-x:auto">
+    <table class="svc">
+      <tr><th>英語メニュー</th><td>英語メニューのみのご依頼</td><td class="price">¥15,000</td></tr>
+      <tr><th>メニューのQRコード化</th><td></td><td class="price">¥2,000</td></tr>
+      <tr><th>メニュー更新（月2回目以降）</th><td></td><td class="price">¥3,000／回</td></tr>
+    </table>
+    </div>
+    <p class="note">月額プランを含む料金の一覧は、<a href="index.html#service">SERVICE</a>をご覧ください。</p>
+  </section>
+
+  <section id="contact" class="contact" aria-labelledby="contact-h">
+    <h2 class="label" id="contact-h"><span>CONTACT</span> ご依頼・ご相談</h2>
+    <p>ご依頼・ご相談は、メールでご連絡ください。</p>
+    <p><a class="link" href="mailto:misakahayato.work@gmail.com">misakahayato.work@gmail.com</a></p>
+  </section>
+</div>
+</main>
+<footer><div class="wrap">© 2026 Hayato Misaka</div></footer>
+</body>
+</html>

@@ -100,6 +100,19 @@ html{overflow-x:clip}
 .plan .what{font-size:13px;color:var(--sub);margin:0 0 18px}
 .plan dl.spec{grid-template-columns:7em 1fr}
 @media (max-width:760px){.plans{grid-template-columns:1fr}}
+/* Works tabs + menu pages */
+.tabs{display:flex;margin:0 0 40px;border-bottom:1px solid var(--rule)}
+.tabs a{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-decoration:none;color:var(--sub);padding:12px 20px;border:1px solid transparent;border-bottom:0;margin-bottom:-1px}
+.tabs a span{margin-left:8px;font-family:var(--body);letter-spacing:.04em}
+.tabs a:hover,.tabs a:focus-visible{color:var(--ink);outline:none}
+.tabs a[aria-current]{color:var(--ink);border-color:var(--rule);background:var(--paper)}
+.menus{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:64px 36px}
+.menu .shot a{display:block}
+.menu .meta{margin-top:20px}
+.menu.wide{grid-column:1/-1;display:grid;grid-template-columns:2fr 1fr;gap:36px;align-items:start}
+.menu.wide .meta{margin-top:0}
+.intro{margin:0 0 44px;max-width:36em}
+@media (max-width:760px){.menus{grid-template-columns:1fr;gap:56px}.menu.wide{grid-template-columns:1fr;gap:20px}.menu.wide .meta{margin-top:20px}.tabs a{padding:12px 16px}}
 </style>
 
 </head>
@@ -126,6 +139,7 @@ html{overflow-x:clip}
 
   <section id="works" aria-labelledby="works-h">
     <h2 class="label" id="works-h"><span>WORKS</span> 制作実績</h2>
+    <nav class="tabs" aria-label="制作実績の種類"><a href="index.html" aria-current="page">WEB<span>サイト</span></a><a href="menu.html">MENU<span>メニュー</span></a></nav>
     <div class="works">
 
       <article class="work">
